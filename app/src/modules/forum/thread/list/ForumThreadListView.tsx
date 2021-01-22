@@ -3,35 +3,42 @@ import {Col, Row} from "react-bootstrap";
 import "./forum-thread-list-view.scss";
 
 interface ForumThreadListViewProps {
-
+    goToThreadDetail: (id: string) => void;
 }
 
 interface Thread {
+    id: string;
     title: string;
     description: string;
+    author: string;
 }
 
 const ForumThreadListView: FunctionComponent<ForumThreadListViewProps> = (
     {
-
+        goToThreadDetail
     }
 ) => {
+
     const threads: Thread[] = [
         {
+            id: '1',
             title: 'Como derrotar al Gael',
-            description: 'No puedo hacerle defeat me cuesta mucho xD'
+            description: 'No puedo hacerle defeat me cuesta mucho xD',
+            author: "Pedroxdddd - lol"
         },
         {
+            id: '2',
             title: 'Como derrotar al Gael',
-            description: 'No puedo hacerle defeat me cuesta mucho xD'
+            description: 'No puedo hacerle defeat me cuesta mucho xD',
+            author: "Pedroxdddd - lol"
         },
         {
+            id: '3',
             title: 'Como derrotar al Gael',
-            description: 'No puedo hacerle defeat me cuesta mucho xD'
+            description: 'No puedo hacerle defeat me cuesta mucho xD',
+            author: "Pedroxdddd - lol"
         }
     ];
-
-    console.log(threads);
 
     return (
         <div className={"forum-thread-list-view-container"}>
@@ -39,10 +46,21 @@ const ForumThreadListView: FunctionComponent<ForumThreadListViewProps> = (
                 <Col>
                     <div>
                         {
-                            threads.map(thread => (
-                                <div>
-                                    <h5>{thread.title}</h5>
-                                    <p>{thread.description}</p>
+                            threads.map((thread, index) => (
+                                <div
+                                    className={"thread"}
+                                    key={index}
+                                    onClick={() => goToThreadDetail(thread.id)}
+                                >
+                                    <img src={"bonfire.png"}/>
+                                    <div className={"thread__info"}>
+                                        <h5>{thread.title}</h5>
+                                        <span>Creado por: {thread.author}</span>
+                                        <p className={"description"}>
+                                            {thread.description}
+                                        </p>
+                                    </div>
+
                                 </div>
                             ))
                         }
