@@ -1,5 +1,7 @@
 import {FunctionComponent} from "react";
-import {Router, RouterProps} from "react-router";
+import {Route, Router, RouterProps} from "react-router";
+import {ROUTE_THREADS} from "./Routes";
+import ForumThreadListScreen from "../modules/forum/thread/list/ForumThreadListScreen";
 
 const Routing: FunctionComponent<RouterProps> = (
     {
@@ -8,7 +10,7 @@ const Routing: FunctionComponent<RouterProps> = (
 ) => {
     return (
         <Router history={history}>
-            
+            <Route path={ROUTE_THREADS} component={ForumThreadListScreen}/>
         </Router>
     );
 };
