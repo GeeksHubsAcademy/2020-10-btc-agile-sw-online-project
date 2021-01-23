@@ -5,8 +5,28 @@ services:
     build: './api'
     ports:
       - 8080:8080
+    depends_on:
+      - mysql
 
   frontend:
     build: './app'
     ports:
       - 3000:3000
+
+  php-my-admin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8082:80
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: secret
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+    ports:
+      - 3306:3306
