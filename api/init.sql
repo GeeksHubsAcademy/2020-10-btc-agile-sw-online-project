@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Jan 23, 2021 at 04:16 PM
+-- Generation Time: Jan 25, 2021 at 06:41 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.13
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
-  `thread` int(11) NOT NULL,
+  `threadId` int(11) NOT NULL,
   `text` text COLLATE utf8_spanish_ci NOT NULL,
   `date` date NOT NULL,
   `author` varchar(255) COLLATE utf8_spanish_ci NOT NULL
@@ -39,7 +39,7 @@ CREATE TABLE `comments` (
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`id`, `thread`, `text`, `date`, `author`) VALUES
+INSERT INTO `comments` (`id`, `threadId`, `text`, `date`, `author`) VALUES
 (1, 1, 'Lo consigues en el santuario oscuro cuando derrotas a gundyr por segunda vez.', '2021-01-14', 'María'),
 (2, 1, 'Es como dice María, mucha gente no sabe que se puede volver a luchar con gundyr. \r\n\r\nUna vez vencemos a otheiros hay un muro secreto que lleva a la localización de tumbas olvidadas, ahí encontrarás a gundyr.', '2021-01-15', 'Parry king');
 
@@ -73,7 +73,7 @@ INSERT INTO `threads` (`id`, `title`, `description`, `date`, `author`) VALUES
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_thread_id` (`thread`);
+  ADD KEY `fk_thread_id` (`threadId`);
 
 --
 -- Indexes for table `threads`
@@ -105,7 +105,7 @@ ALTER TABLE `threads`
 -- Constraints for table `comments`
 --
 ALTER TABLE `comments`
-  ADD CONSTRAINT `fk_thread_id` FOREIGN KEY (`thread`) REFERENCES `threads` (`id`);
+  ADD CONSTRAINT `fk_thread_id` FOREIGN KEY (`threadId`) REFERENCES `threads` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
