@@ -1,8 +1,8 @@
 import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
-import {Comment} from "./Comment";
+import {CommentDTO} from "./CommentDTO";
 
 @Entity({name: 'threads'})
-export class Thread {
+export class ThreadDTO {
     @PrimaryGeneratedColumn()
     public id: number;
 
@@ -18,6 +18,6 @@ export class Thread {
     @Column()
     public author: string;
 
-    @OneToMany(() => Comment, comment => comment.thread)
+    @OneToMany(() => CommentDTO, comment => comment.thread)
     public comments: Comment[];
 }

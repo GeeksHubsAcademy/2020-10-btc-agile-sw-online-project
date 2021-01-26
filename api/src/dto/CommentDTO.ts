@@ -1,8 +1,8 @@
 import {Column, Entity, ManyToOne, PrimaryGeneratedColumn} from "typeorm";
-import {Thread} from "./Thread";
+import {ThreadDTO} from "./ThreadDTO";
 
 @Entity({name: 'comments'})
-export class Comment {
+export class CommentDTO {
     @PrimaryGeneratedColumn()
     public id: number;
 
@@ -15,6 +15,6 @@ export class Comment {
     @Column()
     public author: string;
 
-    @ManyToOne(() => Thread, thread => thread.comments)
-    public thread: Thread;
+    @ManyToOne(() => ThreadDTO, thread => thread.comments)
+    public thread: ThreadDTO;
 }
