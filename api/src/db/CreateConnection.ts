@@ -1,6 +1,6 @@
 import {createConnection} from "typeorm";
-import {Thread} from "../DTO/Thread";
-import {Comment} from "../DTO/Comment";
+import {Thread} from "../dto/Thread";
+import {Comment} from "../dto/Comment";
 import {Connection} from "typeorm/connection/Connection";
 
 export const connectToDB = async (): Promise<Connection> => {
