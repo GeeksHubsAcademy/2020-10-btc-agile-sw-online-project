@@ -1,25 +1,19 @@
 import {Controller} from "./Controller";
-import {Connection} from "typeorm/connection/Connection";
-import {connectToDB} from "../db/CreateConnection";
-import {Thread} from "../dto/Thread";
 import * as express from 'express';
+import {ThreadDAO} from "../dao/ThreadDAO";
 
 export class ThreadController extends Controller {
 
+    public threadDAO: ThreadDAO;
+
     constructor() {
         super('/thread');
+        this.threadDAO = new ThreadDAO();
         this.initializeRoutes();
     }
 
-    async getAllThreads(request: express.Request, response: express.Response) {
-        const connection: Connection = await connectToDB();
-        const threads = await connection
-            .createQueryBuilder()
-            .select("thread")
-            .from(Thread, "thread")
-            .getMany();
-
-        response.send(threads);
+    getAllThreads(request: express.Request, response: express.Response) {
+        response.send(this.threadDAO.fetchThreads());
     }
 
     initializeRoutes(): void {
