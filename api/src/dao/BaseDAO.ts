@@ -1,7 +1,8 @@
 import {ConnectionManager} from "../db/ConnectionManager";
+import {Connection} from "typeorm/connection/Connection";
 
 export abstract class BaseDAO {
-    protected getConnectionManager(): ConnectionManager {
-        return ConnectionManager.getInstance();
+    public async getConnection(): Promise<Connection> {
+        return await ConnectionManager.getConnection();
     }
 }

@@ -4,23 +4,18 @@ import {CommentDTO} from "../dto/CommentDTO";
 import {Connection} from "typeorm/connection/Connection";
 
 export class ConnectionManager {
-    private static instance: ConnectionManager;
-    private connection: Connection;
+    public static connection: Connection;
 
     private constructor() {}
 
-    public static getInstance(): ConnectionManager {
-        if (!ConnectionManager.instance)
-            ConnectionManager.instance = new ConnectionManager();
+    public static async getConnection(): Promise<Connection> {
+        if (!this.connection)
+            await this.connect();
 
-        return ConnectionManager.instance;
-    }
-
-    public getConnection(): Connection {
         return this.connection;
     }
 
-    public async connect() {
+    private static async connect() {
         this.connection = await createConnection({
             type: 'mysql',
             host: 'localhost',
@@ -30,12 +25,5 @@ export class ConnectionManager {
             database: "forum",
             entities: [ThreadDTO, CommentDTO]
         });
-    }
-
-    public async disconnect(){
-        if (!this.connection)
-            throw new Error("Connection is not established");
-
-        await this.connection.close();
     }
 }

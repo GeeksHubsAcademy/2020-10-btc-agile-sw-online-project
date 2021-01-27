@@ -2,23 +2,14 @@ import {BaseDAO} from "./BaseDAO";
 import {ThreadDTO} from "../dto/ThreadDTO";
 
 export class ThreadDAO extends BaseDAO {
-    constructor() {
-        super();
-    }
 
     async fetchThreads(): Promise<Array<ThreadDTO>> {
-        await this.getConnectionManager().connect();
+        const connection = await this.getConnection();
 
-        const threads: Array<ThreadDTO> =
-            await this.getConnectionManager()
-                .getConnection()
+        return await connection
                 .createQueryBuilder()
                 .select("thread")
                 .from(ThreadDTO, "thread")
                 .getMany();
-
-        // await this.getConnectionManager().disconnect();
-
-        return threads;
     }
 }
