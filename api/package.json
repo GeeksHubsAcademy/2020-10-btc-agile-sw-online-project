@@ -11,13 +11,13 @@
     "typeorm": "^0.2.30"
   },
   "scripts": {
-    "start": "node ./build/run.js",
-    "build": "tsc",
-    "build-and-start": "tsc && node ./build/run.js"
+    "start": "ts-node src/run.ts",
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
     "@types/mysql": "^2.15.17",
+    "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }
 }
