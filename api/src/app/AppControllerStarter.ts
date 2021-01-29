@@ -20,9 +20,6 @@ export class AppControllerStarter {
     }
 
     public startControllers(): void {
-        this.controllers.forEach((controller: Controller) => {
-            console.log(controller);
-            this.app.expressApp.use('/', controller.router);
-        });
+        this.controllers.forEach((controller: Controller) => this.app.expressApp.use('/', controller.router));
     }
 }

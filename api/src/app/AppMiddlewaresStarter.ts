@@ -1,6 +1,7 @@
 import {App} from "./App";
+import * as express from "express";
 
-export class AppRunner {
+export class AppMiddlewaresStarter {
     private readonly app: App;
 
     constructor(app: App) {
@@ -10,9 +11,8 @@ export class AppRunner {
         this.app = app;
     }
 
-    public run() {
-        this.app.expressApp.listen(this.app.port, () => {
-            console.log(`App running on the port ${this.app.port}`);
-        });
+    public startMiddlewares(): void {
+        this.app.expressApp.use(express.json());
+        this.app.expressApp.use(express.urlencoded({ extended: true }));
     }
 }
