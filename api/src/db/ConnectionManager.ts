@@ -1,6 +1,4 @@
 import {createConnection} from "typeorm";
-import {ThreadDTO} from "../dto/ThreadDTO";
-import {CommentDTO} from "../dto/CommentDTO";
 import {Connection} from "typeorm/connection/Connection";
 
 export class ConnectionManager {
@@ -16,14 +14,10 @@ export class ConnectionManager {
     }
 
     private static async connect() {
-        this.connection = await createConnection({
-            type: 'mysql',
-            host: 'localhost',
-            port: 3306,
-            username: 'root',
-            password: "secret",
-            database: "forum",
-            entities: [ThreadDTO, CommentDTO]
-        });
+        if (process.env.API_ENV === 'dev'){
+            this.connection = await createConnection('dev');
+        } else if (process.env.API_ENV === 'test') {
+            this.connection = await createConnection('test');
+        }
     }
 }

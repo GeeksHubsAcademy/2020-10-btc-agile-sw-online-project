@@ -32,4 +32,5 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./api/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./api/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./api/sql/init-test.sql:/docker-entrypoint-initdb.d/init-test.sql

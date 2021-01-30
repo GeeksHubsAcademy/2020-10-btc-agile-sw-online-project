@@ -1,3 +1,4 @@
+require('dotenv').config();
 import {App} from "./app/App";
 import {AppControllerStarter} from "./app/AppControllerStarter";
 import {BaseController} from "./controllers/BaseController";
