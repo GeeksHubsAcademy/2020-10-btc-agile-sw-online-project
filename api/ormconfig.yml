@@ -1,5 +1,5 @@
 dev:
-  host: "localhost"
+  host: "mysql"
   port: 3306
   username: "root"
   password: "secret"
@@ -10,7 +10,7 @@ dev:
   ]
 
 test:
-  host: "localhost"
+  host: "mysql"
   port: 3306
   username: "root"
   password: "secret"
