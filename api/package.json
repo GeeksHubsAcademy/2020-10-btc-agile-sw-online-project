@@ -7,16 +7,26 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jest": "^26.6.3",
     "mysql": "^2.18.1",
     "typeorm": "^0.2.30"
   },
   "scripts": {
     "start": "ts-node src/run.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest",
+    "test-watch": "jest --watchAll"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-decorators": "^7.12.12",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
     "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.20",
     "@types/mysql": "^2.15.17",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-transform-typescript-metadata": "^0.3.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }
