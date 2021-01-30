@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Jan 25, 2021 at 06:41 PM
+-- Generation Time: Jan 30, 2021 at 06:32 PM
 -- Server version: 5.7.33
--- PHP Version: 7.4.13
+-- PHP Version: 7.4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `forum`
 --
+CREATE DATABASE IF NOT EXISTS `forum` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `forum`;
 
 -- --------------------------------------------------------
 
