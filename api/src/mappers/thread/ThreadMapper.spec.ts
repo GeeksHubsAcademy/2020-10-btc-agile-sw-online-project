@@ -1,6 +1,6 @@
 import {ThreadDTO} from "../../dto/ThreadDTO";
 import {ThreadModel} from "../../models/ThreadModel";
-import {ThreadMapper} from "../ThreadMapper";
+import {ThreadMapper} from "./ThreadMapper";
 
 describe('ThreadMapper tests', () => {
     it('should return ThreadDTO when create from Model', () => {

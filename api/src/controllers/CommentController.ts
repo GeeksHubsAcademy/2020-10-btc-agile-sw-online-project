@@ -1,7 +1,7 @@
 import {BaseController} from "./BaseController";
-import {CommentDAO} from "../dao/CommentDAO";
+import {CommentDAO} from "../dao/comment/CommentDAO";
 import * as express from "express";
-import {CommentMapper} from "../mappers/CommentMapper";
+import {CommentMapper} from "../mappers/comment/CommentMapper";
 import {CommentDTO} from "../dto/CommentDTO";
 
 const route: string = '/comment';

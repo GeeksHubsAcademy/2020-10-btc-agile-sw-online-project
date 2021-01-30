@@ -1,6 +1,6 @@
-import {ConnectionManager} from "../db/ConnectionManager";
-import {ThreadModel} from "../models/ThreadModel";
-import {ThreadDTO} from "../dto/ThreadDTO";
+import {ConnectionManager} from "../../db/ConnectionManager";
+import {ThreadModel} from "../../models/ThreadModel";
+import {ThreadDTO} from "../../dto/ThreadDTO";
 
 export class ThreadMapper {
     public static async fromModel(threadModel: ThreadModel): Promise<ThreadDTO> {

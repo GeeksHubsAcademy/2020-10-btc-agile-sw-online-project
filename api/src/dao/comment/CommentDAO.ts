@@ -1,5 +1,5 @@
-import {BaseDAO} from "./BaseDAO";
-import {CommentDTO} from "../dto/CommentDTO";
+import {BaseDAO} from "../BaseDAO";
+import {CommentDTO} from "../../dto/CommentDTO";
 import {DeleteResult} from "typeorm";
 
 export class CommentDAO extends BaseDAO {

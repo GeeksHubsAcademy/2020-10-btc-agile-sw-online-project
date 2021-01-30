@@ -1,5 +1,5 @@
-import {BaseDAO} from "./BaseDAO";
-import {ThreadDTO} from "../dto/ThreadDTO";
+import {BaseDAO} from "../BaseDAO";
+import {ThreadDTO} from "../../dto/ThreadDTO";
 import {DeleteResult} from "typeorm";
 
 export class ThreadDAO extends BaseDAO {

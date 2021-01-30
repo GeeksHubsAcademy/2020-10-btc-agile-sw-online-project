@@ -1,5 +1,5 @@
 import {CommentModel} from "../../models/CommentModel";
-import {CommentMapper} from "../CommentMapper";
+import {CommentMapper} from "./CommentMapper";
 import {CommentDTO} from "../../dto/CommentDTO";
 
 describe('CommentMapper tests', () => {

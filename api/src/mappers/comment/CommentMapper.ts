@@ -1,6 +1,6 @@
-import {CommentDTO} from "../dto/CommentDTO";
-import {CommentModel} from "../models/CommentModel";
-import {ConnectionManager} from "../db/ConnectionManager";
+import {CommentDTO} from "../../dto/CommentDTO";
+import {CommentModel} from "../../models/CommentModel";
+import {ConnectionManager} from "../../db/ConnectionManager";
 
 export class CommentMapper {
     public static async fromModel(comment: CommentModel): Promise<CommentDTO> {

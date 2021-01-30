@@ -1,8 +1,8 @@
 import {BaseController} from "./BaseController";
 import * as express from 'express';
-import {ThreadDAO} from "../dao/ThreadDAO";
+import {ThreadDAO} from "../dao/thread/ThreadDAO";
 import {ThreadDTO} from "../dto/ThreadDTO";
-import {ThreadMapper} from "../mappers/ThreadMapper";
+import {ThreadMapper} from "../mappers/thread/ThreadMapper";
 
 const route: string = '/thread';
 
