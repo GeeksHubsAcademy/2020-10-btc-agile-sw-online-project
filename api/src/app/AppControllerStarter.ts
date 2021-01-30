@@ -1,16 +1,16 @@
 import {App} from "./App";
-import {Controller} from "../controllers/Controller";
+import {BaseController} from "../controllers/BaseController";
 
 export class AppControllerStarter {
     private readonly app: App;
-    private readonly controllers: Array<Controller>;
+    private readonly controllers: Array<BaseController>;
 
-    constructor(app: App, controllers: Array<Controller>) {
+    constructor(app: App, controllers: Array<BaseController>) {
         if (app === null|| app === undefined)
             throw new Error("Must provided an App instance");
 
         if (controllers === null || controllers === undefined)
-            throw new Error("Controller property is required");
+            throw new Error("BaseController property is required");
 
         if (controllers.length === 0)
             throw new Error("Must provided at least one controller");
@@ -20,6 +20,6 @@ export class AppControllerStarter {
     }
 
     public startControllers(): void {
-        this.controllers.forEach((controller: Controller) => this.app.expressApp.use('/', controller.router));
+        this.controllers.forEach((controller: BaseController) => this.app.expressApp.use('/', controller.router));
     }
 }

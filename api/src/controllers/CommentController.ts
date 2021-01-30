@@ -1,4 +1,4 @@
-import {Controller} from "./Controller";
+import {BaseController} from "./BaseController";
 import {CommentDAO} from "../dao/CommentDAO";
 import * as express from "express";
 import {CommentMapper} from "../mappers/CommentMapper";
@@ -6,7 +6,7 @@ import {CommentDTO} from "../dto/CommentDTO";
 
 const route: string = '/comment';
 
-export class CommentController extends Controller {
+export class CommentController extends BaseController {
 
     private commentDAO: CommentDAO;
 

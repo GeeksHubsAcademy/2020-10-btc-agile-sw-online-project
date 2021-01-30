@@ -1,6 +1,6 @@
 import * as express from 'express';
 
-export abstract class Controller {
+export abstract class BaseController {
     public path: string;
     public router: express.Router;
 
