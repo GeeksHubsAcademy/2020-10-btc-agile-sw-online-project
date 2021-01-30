@@ -7,7 +7,7 @@ import {AppRunner} from "./app/AppRunner";
 import {CommentController} from "./controllers/CommentController";
 import {AppMiddlewaresStarter} from "./app/AppMiddlewaresStarter";
 
-const app: App = new App(9111);
+const app: App = new App(process.env.API_PORT);
 const appControllers: Array<BaseController> = [new ThreadController(), new CommentController()];
 const appMiddlewaresStarter: AppMiddlewaresStarter = new AppMiddlewaresStarter(app);
 const appControllerStarter: AppControllerStarter = new AppControllerStarter(app, appControllers);
