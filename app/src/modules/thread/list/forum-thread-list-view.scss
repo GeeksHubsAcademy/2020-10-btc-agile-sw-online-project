@@ -1,0 +1,35 @@
+.forum-thread-list-view-container {
+  padding: 10px;
+}
+
+.thread {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #786D88;
+
+  &:hover {
+    background-color: #726685;
+    cursor: pointer;
+  }
+
+  img {
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+  }
+
+  .thread__info {
+    display: flex;
+    flex-flow: column;
+
+    span {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      color: rgba(255, 255, 255, 0.5) !important;
+    }
+  }
+}
