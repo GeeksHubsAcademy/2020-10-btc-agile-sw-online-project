@@ -25,6 +25,7 @@
     "@babel/plugin-proposal-decorators": "^7.12.12",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-typescript": "^7.12.7",
+    "@types/cors": "^2.8.9",
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.20",
     "@types/mysql": "^2.15.17",

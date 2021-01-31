@@ -1,6 +1,6 @@
 import {App} from "./App";
 import * as express from "express";
-import cors from "cors";
+const cors = require('cors');
 
 export class AppMiddlewaresStarter {
     private readonly app: App;
