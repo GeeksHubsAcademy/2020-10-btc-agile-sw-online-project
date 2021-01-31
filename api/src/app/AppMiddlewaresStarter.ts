@@ -1,5 +1,6 @@
 import {App} from "./App";
 import * as express from "express";
+import cors from "cors";
 
 export class AppMiddlewaresStarter {
     private readonly app: App;
@@ -12,6 +13,7 @@ export class AppMiddlewaresStarter {
     }
 
     public startMiddlewares(): void {
+        this.app.expressApp.use(cors())
         this.app.expressApp.use(express.json());
         this.app.expressApp.use(express.urlencoded({ extended: true }));
     }
