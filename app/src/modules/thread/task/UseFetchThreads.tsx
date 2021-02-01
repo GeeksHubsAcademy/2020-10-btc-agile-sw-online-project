@@ -1,18 +1,10 @@
-import {FetchThreadsResponse} from "./FetchThreadsResponse";
 import {axiosRequest} from "../../../task/axios";
 import {useQuery} from "react-query";
 import {THREAD_LIST} from "../../../task/endpoints";
+import {Thread} from "../Thread";
 
 const useFetchThreads = () => {
-    const { status, data, isLoading } = useQuery('fetchThreads', async () => {
-        return axiosRequest.get<{}, FetchThreadsResponse>(THREAD_LIST);
-    });
-
-    return {
-        status,
-        data,
-        isLoading
-    }
+    return useQuery('fetchThreads', async () => ( axiosRequest.get<Array<Thread>>(THREAD_LIST)) );
 };
 
 export default useFetchThreads;
