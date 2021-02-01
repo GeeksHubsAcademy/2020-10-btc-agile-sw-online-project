@@ -30,8 +30,8 @@ const ConfirmActionModal: FunctionComponent<ConfirmActionModalProps> = (
                     text={"Aceptar"}
                 />
                 <COButton
-                    onClick={() => onConfirm()}
-                    variant={"danger"}
+                    onClick={() => onClose()}
+                    variant={"secondary"}
                     text={"Cancelar"}
                 />
             </Modal.Footer>

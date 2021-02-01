@@ -1,73 +1,77 @@
-import {FunctionComponent} from "react";
+import {FunctionComponent, useState} from "react";
 import {Col, Row} from "react-bootstrap";
 import "./forum-thread-list-view.scss";
+import ThreadCard from "../card/ThreadCard";
+import LoadingView from "../../../components/loading/LoadingView";
+import {Thread} from "../Thread";
+import COButton from "../../../components/button/COButton";
+import AddThreadFormModal from "../form/AddThreadFormModal";
+import {AddThreadRequest} from "../task/AddThreadRequest";
+import {DeleteThreadRequest} from "../task/DeleteThreadRequest";
 
 interface ForumThreadListViewProps {
-    goToThreadDetail: (id: string) => void;
-}
-
-interface Thread {
-    id: string;
-    title: string;
-    description: string;
-    author: string;
+    threads: Thread[];
+    handleAddThread: (threadData: AddThreadRequest) => void;
+    handleDeleteThread: (threadData: DeleteThreadRequest) => void;
+    loading: boolean;
+    error: boolean;
 }
 
 const ForumThreadListView: FunctionComponent<ForumThreadListViewProps> = (
     {
-        goToThreadDetail
+        threads,
+        handleAddThread,
+        handleDeleteThread,
+        loading,
+        error
     }
 ) => {
+    const [isOpenAddModal, setIsOpenAddModal] = useState<boolean>(false);
+    const handleOpenAddModal = (): void => setIsOpenAddModal(true);
+    const handleCloseAddModal = (): void => setIsOpenAddModal(false);
 
-    const threads: Thread[] = [
-        {
-            id: '1',
-            title: 'Como derrotar al Gael',
-            description: 'No puedo hacerle defeat me cuesta mucho xD',
-            author: "Pedroxdddd - lol"
-        },
-        {
-            id: '2',
-            title: 'Como derrotar al Gael',
-            description: 'No puedo hacerle defeat me cuesta mucho xD',
-            author: "Pedroxdddd - lol"
-        },
-        {
-            id: '3',
-            title: 'Como derrotar al Gael',
-            description: 'No puedo hacerle defeat me cuesta mucho xD',
-            author: "Pedroxdddd - lol"
-        }
-    ];
+    if (error)
+        return <h3>Se ha producido un error</h3>;
+
+    if (loading)
+        return <LoadingView loading={loading}/>;
 
     return (
-        <div className={"forum-thread-list-view-container"}>
-            <Row>
-                <Col>
-                    <div>
-                        {
-                            threads.map((thread, index) => (
-                                <div
-                                    className={"thread"}
-                                    key={index}
-                                    onClick={() => goToThreadDetail(thread.id)}
-                                >
-                                    <img src={"bonfire.png"}/>
-                                    <div className={"thread__info"}>
-                                        <h5>{thread.title}</h5>
-                                        <span>Creado por: {thread.author}</span>
-                                        <p className={"description"}>
-                                            {thread.description}
-                                        </p>
-                                    </div>
-
-                                </div>
-                            ))
-                        }
-                    </div>
-                </Col>
-            </Row>
-        </div>
+        <>
+            <div className={"forum-thread-list-view-container"}>
+                <Row>
+                    <Col>
+                        <div className={"forum-thread-list__header"}>
+                            <h3>Hilos</h3>
+                            <COButton
+                                text={"Añadir hilo"}
+                                onClick={() => handleOpenAddModal()}
+                            />
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div>
+                            {
+                                threads.map((thread, index) => (
+                                    <ThreadCard
+                                        thread={thread}
+                                        handleDeleteThread={handleDeleteThread}
+                                        key={index}
+                                    />
+                                ))
+                            }
+                        </div>
+                    </Col>
+                </Row>
+            </div>
+            <AddThreadFormModal
+                onSubmit={handleAddThread}
+                onClose={() => handleCloseAddModal()}
+                show={isOpenAddModal}
+            />
+        </>
     );
 };
 

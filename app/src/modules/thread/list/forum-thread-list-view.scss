@@ -1,35 +1,17 @@
 .forum-thread-list-view-container {
   padding: 10px;
-}
 
-.thread {
-  display: flex;
-  flex-flow: row nowrap;
-  margin-bottom: 12px;
-  border-bottom: 1px solid #786D88;
-
-  &:hover {
-    background-color: #726685;
-    cursor: pointer;
-  }
-
-  img {
-    width: 42px;
-    height: 42px;
-    margin-right: 10px;
-  }
-
-  .thread__info {
+  .forum-thread-list__header {
     display: flex;
-    flex-flow: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #786D88;
 
-    span {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .description {
-      color: rgba(255, 255, 255, 0.5) !important;
+    h3 {
+      letter-spacing: 1px;
+      margin-left: 30px;
     }
   }
 }
