@@ -60,7 +60,7 @@ const ThreadCard: FunctionComponent<ThreadCardProps> = (
             <ConfirmActionModal
                 text={"¿Estás seguro de que quieres eliminar el hilo?"}
                 onConfirm={() => {
-                    handleDeleteThread({threadId: thread.id});
+                    handleDeleteThread({id: thread.id});
                     handleCloseDeleteModal();
                 }}
                 onClose={handleCloseDeleteModal}

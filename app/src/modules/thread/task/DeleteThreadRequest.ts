@@ -1,5 +1,5 @@
 interface DeleteThreadRequestData {
-    threadId: string;
+    id: string;
 }
 
 export type DeleteThreadRequest = DeleteThreadRequestData;
