@@ -25,7 +25,7 @@ npm manifest:
   {
     "name": "api",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "index.ts",
     "author": "eliasmartinez",
     "license": "MIT",
     "dependencies": {
