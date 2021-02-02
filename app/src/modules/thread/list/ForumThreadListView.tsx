@@ -44,7 +44,9 @@ const ForumThreadListView: FunctionComponent<ForumThreadListViewProps> = (
                         <div className={"forum-thread-list__header"}>
                             <h3>Hilos</h3>
                             <COButton
+                                dataCy={"add-thread-button"}
                                 text={"Añadir hilo"}
+                                className={"btn btn-primary"}
                                 onClick={() => handleOpenAddModal()}
                             />
                         </div>

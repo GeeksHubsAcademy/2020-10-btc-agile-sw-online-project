@@ -3,4 +3,5 @@ export interface FieldProps {
     onChangeValue?: (value: string) => void;
     placeholder?: string;
     label?: string;
+    dataCy?: string;
 }

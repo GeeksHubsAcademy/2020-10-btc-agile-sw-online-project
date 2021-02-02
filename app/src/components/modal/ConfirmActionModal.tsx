@@ -26,12 +26,15 @@ const ConfirmActionModal: FunctionComponent<ConfirmActionModalProps> = (
             </Modal.Header>
             <Modal.Footer>
                 <COButton
+                    dataCy={"confirm-modal-accept-button"}
                     onClick={() => onConfirm()}
+                    className={"btn btn-primary"}
                     text={"Aceptar"}
                 />
                 <COButton
+                    dataCy={"confirm-modal-cancel-button"}
                     onClick={() => onClose()}
-                    variant={"secondary"}
+                    className={"btn btn-secondary"}
                     text={"Cancelar"}
                 />
             </Modal.Footer>

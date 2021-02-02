@@ -41,12 +41,15 @@ const ThreadCard: FunctionComponent<ThreadCardProps> = (
                         <h5>{thread.title}</h5>
                         <div className="thread-info-title__actions">
                             <COButton
+                                dataCy={`details-thread-button-${thread.id}`}
                                 text={"Ir al hilo"}
+                                className={"btn btn-primary"}
                                 onClick={() => handleOnThreadClick(thread.id.toString())}
                             />
                             <COButton
+                                dataCy={`delete-thread-button-${thread.id}`}
                                 text={"Borrar"}
-                                variant={"danger"}
+                                className={"btn btn-danger"}
                                 onClick={() => handleOpenDeleteModal()}
                             />
                         </div>

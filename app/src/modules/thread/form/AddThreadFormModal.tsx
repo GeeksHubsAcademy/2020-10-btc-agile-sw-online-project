@@ -45,6 +45,7 @@ const AddThreadFormModal: FunctionComponent<AddThreadFormModalProps> = (
             <Modal.Body>
                 <form>
                     <InputForm
+                        dataCy={"add-thread-input-title"}
                         label={"Título"}
                         value={title}
                         onChangeValue={value => setTitle(value)}
@@ -52,6 +53,7 @@ const AddThreadFormModal: FunctionComponent<AddThreadFormModalProps> = (
                     />
 
                     <InputForm
+                        dataCy={"add-thread-input-author"}
                         label={"Autor"}
                         value={author}
                         onChangeValue={value => setAuthor(value)}
@@ -59,6 +61,7 @@ const AddThreadFormModal: FunctionComponent<AddThreadFormModalProps> = (
                     />
 
                     <TextArea
+                        dataCy={"add-thread-input-description"}
                         label={"Descripción"}
                         value={description}
                         onChangeValue={value => setDescription(value)}
@@ -68,12 +71,14 @@ const AddThreadFormModal: FunctionComponent<AddThreadFormModalProps> = (
             </Modal.Body>
             <Modal.Footer>
                 <COButton
+                    dataCy={"add-thread-form-button"}
                     onClick={() => handleOnSubmit()}
                     text={"Crear"}
+                    className={"btn btn-primary"}
                 />
                 <COButton
                     onClick={() => onClose()}
-                    variant={"danger"}
+                    className={"btn btn-danger"}
                     text={"Cancelar"}
                 />
             </Modal.Footer>

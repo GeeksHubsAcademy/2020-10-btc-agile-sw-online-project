@@ -13,6 +13,7 @@ const TextArea: FunctionComponent<Props> = (
         onChangeValue,
         placeholder,
         label,
+        dataCy
     }
 ) => {
     const classes = classNames
@@ -34,6 +35,7 @@ const TextArea: FunctionComponent<Props> = (
                 style={style}
                 placeholder={placeholder}
                 rows={3}
+                data-cy={dataCy}
             />
         </div>
     );

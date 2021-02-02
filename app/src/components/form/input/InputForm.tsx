@@ -13,6 +13,7 @@ const InputForm: FunctionComponent<Props> = (
         onChangeValue,
         placeholder,
         label,
+        dataCy
     }
 ) => {
     const classes = classNames
@@ -33,6 +34,7 @@ const InputForm: FunctionComponent<Props> = (
                 className={classes}
                 style={style}
                 placeholder={placeholder}
+                data-cy={dataCy}
             />
         </div>
     );

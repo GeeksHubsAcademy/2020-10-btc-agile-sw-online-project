@@ -1,6 +1,5 @@
 import {FunctionComponent} from "react";
 import {StyledProps} from "../StyledProps";
-import {Button} from "react-bootstrap";
 import classNames from "classnames";
 import {ButtonVariant} from "react-bootstrap/types";
 import "./button.scss";
@@ -13,7 +12,8 @@ interface COButtonProps extends StyledProps {
     variant?: ButtonVariant;
     disabled?: boolean;
     to?: string;
-    type?: ButtonType
+    type?: ButtonType;
+    dataCy?: string;
 }
 
 const COButton: FunctionComponent<COButtonProps> = (
@@ -25,7 +25,8 @@ const COButton: FunctionComponent<COButtonProps> = (
         variant,
         disabled,
         children,
-        type
+        type,
+        dataCy
     }
 ) => {
     const classes = classNames
@@ -35,17 +36,16 @@ const COButton: FunctionComponent<COButtonProps> = (
     );
 
     return (
-        <Button
-            variant={variant || "primary"}
+        <button
             className={classes}
             style={style}
             onClick={() => {onClick && onClick()}}
             disabled={disabled}
-            type={type}
+            data-cy={dataCy}
         >
             {text}
             {children}
-        </Button>
+        </button>
     );
 };
 
