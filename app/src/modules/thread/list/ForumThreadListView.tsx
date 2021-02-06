@@ -1,6 +1,5 @@
 import {FunctionComponent, useState} from "react";
 import {Col, Row} from "react-bootstrap";
-import "./forum-thread-list-view.scss";
 import ThreadCard from "../card/ThreadCard";
 import LoadingView from "../../../components/loading/LoadingView";
 import {Thread} from "../Thread";
@@ -38,10 +37,10 @@ const ForumThreadListView: FunctionComponent<ForumThreadListViewProps> = (
 
     return (
         <>
-            <div className={"forum-thread-list-view-container"}>
+            <div className={"list-view-container"}>
                 <Row>
                     <Col>
-                        <div className={"forum-thread-list__header"}>
+                        <div className={"list-view__header"}>
                             <h3>Hilos</h3>
                             <COButton
                                 dataCy={"add-thread-button"}
