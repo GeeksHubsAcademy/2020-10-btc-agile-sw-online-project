@@ -34,7 +34,7 @@ const ThreadCard: FunctionComponent<ThreadCardProps> = (
     return (
         <>
             <div className={"thread-card-container"}>
-                <img src={"bonfire.png"}/>
+                <img src={"/bonfire.png"}/>
 
                 <div className={"thread__info"}>
                     <div className={"thread-info__title"}>

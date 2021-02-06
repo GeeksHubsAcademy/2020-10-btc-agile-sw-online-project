@@ -3,7 +3,7 @@ import {RouteComponentProps} from "react-router";
 import CommentListDataContainer from "./CommentListDataContainer";
 
 interface MatchParams {
-    threadId: string;
+    id: string;
 }
 
 
@@ -12,7 +12,7 @@ const CommentListScreen: FunctionComponent<RouteComponentProps<MatchParams>> = (
         match
     }
 ) => {
-    return <CommentListDataContainer id={match.params.threadId}/>
+    return <CommentListDataContainer id={match.params.id}/>
 };
 
 export default CommentListScreen;
