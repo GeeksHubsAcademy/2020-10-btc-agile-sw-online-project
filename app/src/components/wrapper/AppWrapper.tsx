@@ -19,7 +19,7 @@ const AppWrapper: FunctionComponent<AppWrapperProps> = (
             <div className={"app-wrapper-container__content"}>
                 <Col md={2}>
                     <div className={"app-wrapper-container__banner"}>
-                        <img src={"siegmeyer.png"} alt={"siegmeyer-pj"}/>
+                        <img src={"/siegmeyer.png"} alt={"siegmeyer-pj"}/>
                     </div>
                 </Col>
                 <Col md={8}>
@@ -29,7 +29,7 @@ const AppWrapper: FunctionComponent<AppWrapperProps> = (
                 </Col>
                 <Col md={2}>
                     <div className={"app-wrapper-container__banner"}>
-                        <img src={"solaire.png"} alt={"solaire-pj"}/>
+                        <img src={"/solaire.png"} alt={"solaire-pj"}/>
                     </div>
                 </Col>
             </div>
