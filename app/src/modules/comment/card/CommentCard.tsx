@@ -35,6 +35,7 @@ const CommentCard: FunctionComponent<CommentCardProps> = (
                         </div>
 
                         <COButton
+                            dataCy={`delete-comment-button-${comment.id}`}
                             text={"Borrar"}
                             className={"btn btn-danger"}
                             onClick={handleOpenDeleteModal}

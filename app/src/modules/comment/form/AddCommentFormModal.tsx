@@ -38,7 +38,7 @@ const AddCommentFormModal: FunctionComponent<AddCommentFormModalProps> = (
             animation={true}
         >
             <Modal.Header>
-                <h5 className="modal-title">Nuevo commentario</h5>
+                <h5 className="modal-title">Nuevo comentario</h5>
             </Modal.Header>
             <Modal.Body>
                 <form>

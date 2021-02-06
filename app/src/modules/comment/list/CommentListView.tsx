@@ -52,10 +52,12 @@ const CommentListView: FunctionComponent<CommentListViewProps> = (
                             <div className={"comment-list__actions"}>
                                 <COButton
                                     text={"Comentar"}
+                                    dataCy={"add-comment-button"}
                                     className={"btn btn-primary"}
                                     onClick={handleOpenAddModal}
                                 />
                                 <COButton
+                                    dataCy={"go-back-comment-button"}
                                     text={"Volver"}
                                     className={"btn btn-secondary"}
                                     onClick={() => handleGoBack()}
