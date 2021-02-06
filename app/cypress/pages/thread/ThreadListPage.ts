@@ -4,7 +4,7 @@ import {ROUTE_THREAD_DETAIL, ROUTE_THREADS} from "../../routes/Routes";
 import {Page} from "../Page";
 import {TextInputComponent} from "../../components/TextInput";
 import {DELETE_THREAD} from "../../routes/Endpoints";
-import {RouteGenerator} from "../../../src/routing/RouteGenerator";
+import {RouteGenerator} from "../../../src/routing/generator/RouteGenerator";
 
 export class ThreadListPage extends Page{
 

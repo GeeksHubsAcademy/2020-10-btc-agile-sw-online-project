@@ -1,7 +1,7 @@
 import {FunctionComponent, useState} from "react";
 import "./thread-card.scss";
 import {useHistory} from "react-router";
-import {RouteGenerator} from "../../../routing/RouteGenerator";
+import {RouteGenerator} from "../../../routing/generator/RouteGenerator";
 import {ROUTE_THREAD_DETAIL} from "../../../routing/Routes";
 import {Thread} from "../Thread";
 import COButton from "../../../components/button/COButton";
