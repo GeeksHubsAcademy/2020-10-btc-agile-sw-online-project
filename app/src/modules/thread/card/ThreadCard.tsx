@@ -7,6 +7,7 @@ import {Thread} from "../Thread";
 import COButton from "../../../components/button/COButton";
 import {DeleteThreadRequest} from "../task/DeleteThreadRequest";
 import ConfirmActionModal from "../../../components/modal/ConfirmActionModal";
+import {DateFormatter} from "../../../utils/date/DateFormatter";
 
 interface ThreadCardProps {
     thread: Thread;
@@ -31,6 +32,8 @@ const ThreadCard: FunctionComponent<ThreadCardProps> = (
         history.push(route);
     }
 
+    const date: string = DateFormatter.toDDMMYYYY(new Date(thread.date));
+
     return (
         <>
             <div className={"thread-card-container"}>
@@ -54,7 +57,7 @@ const ThreadCard: FunctionComponent<ThreadCardProps> = (
                             />
                         </div>
                     </div>
-                    <span>Creado por: {thread.author}</span>
+                    <span>Creado por: {thread.author} - {date}</span>
                     <p className={"description"}>
                         {thread.description}
                     </p>

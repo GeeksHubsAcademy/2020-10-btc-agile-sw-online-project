@@ -4,6 +4,7 @@ import {Comment} from "../Comment";
 import COButton from "../../../components/button/COButton";
 import {DeleteCommentRequest} from "../task/DeleteCommentRequest";
 import ConfirmActionModal from "../../../components/modal/ConfirmActionModal";
+import {DateFormatter} from "../../../utils/date/DateFormatter";
 
 interface CommentCardProps {
     comment: Comment;
@@ -20,6 +21,8 @@ const CommentCard: FunctionComponent<CommentCardProps> = (
     const handleOpenDeleteModal = (): void => setShowDeleteModal(true);
     const handleCloseDeleteModal = (): void => setShowDeleteModal(false);
 
+    const date = DateFormatter.toDDMMYYYY(new Date(comment.date));
+
     return (
         <>
             <div className={"comment-card-container"}>
@@ -28,7 +31,7 @@ const CommentCard: FunctionComponent<CommentCardProps> = (
                     <div className={"comment__header"}>
                         <div style={{display: 'flex', flexFlow: 'row nowrap'}}>
                             <h5>{comment.author}</h5>
-                            <span>{comment.date}</span>
+                            <span>{date}</span>
                         </div>
 
                         <COButton
