@@ -3,25 +3,25 @@
 import {ROUTE_THREAD_DETAIL, ROUTE_THREADS} from "../../routes/Routes";
 import {Page} from "../Page";
 import {TextInputComponent} from "../../components/TextInput";
-import {DELETE_THREAD} from "../../routes/Endpoints";
+import {ADD_THREAD} from "../../routes/Endpoints";
 import {RouteGenerator} from "../../../src/routing/generator/RouteGenerator";
 
 export class ThreadListPage extends Page{
 
-    private readonly deleteEndpoint: string;
+    private readonly addThreadEndpoint: string;
 
     constructor() {
         super(ROUTE_THREADS);
-        this.deleteEndpoint = DELETE_THREAD;
+        this.addThreadEndpoint = ADD_THREAD;
     }
 
     public deleteThread(): void {
         cy.server();
-        cy.route('POST', this.deleteEndpoint).as('delete-thread-request');
+        cy.route('POST', this.addThreadEndpoint).as('add-thread-request');
 
         this.addThread();
-        cy.wait('@delete-thread-request').should('have.property', 'status', 200);
-        cy.get('@delete-thread-request')
+        cy.wait('@add-thread-request').should('have.property', 'status', 200);
+        cy.get('@add-thread-request')
             .its('response.body.id')
             .then(id => {
                 cy.reload();
