@@ -14,10 +14,10 @@
   },
   "scripts": {
     "start": "API_ENV=dev ts-node src/run.ts",
-    "start:test": "API_ENV=test yarn start",
+    "start:test": "yarn start",
     "build": "tsc",
-    "test": "API_ENV=test jest",
-    "test-watch": "API_ENV=test jest --watchAll"
+    "test": "jest",
+    "test-watch": "jest --watchAll"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
