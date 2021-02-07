@@ -12,7 +12,7 @@ describe('Comment module tests', () => {
       commentListPage.addComment();
    });
 
-   it.only('Delete comment', () => {
+   it('Delete comment', () => {
       commentListPage.visit();
       commentListPage.deleteComment();
    });
