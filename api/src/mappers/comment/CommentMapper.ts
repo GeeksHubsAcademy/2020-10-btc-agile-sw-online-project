@@ -1,3 +1,8 @@
+/*
+    PRINCIPIO SINGLE RESPONSIBILITY
+    Solo posee una funcionalidad, generar una instance del DTO a partir de la entidad de domino
+ */
+
 import {CommentDTO} from "../../dto/CommentDTO";
 import {CommentModel} from "../../models/CommentModel";
 import {ConnectionManager} from "../../db/ConnectionManager";
