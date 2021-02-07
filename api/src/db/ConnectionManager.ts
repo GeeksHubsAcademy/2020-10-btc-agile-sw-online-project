@@ -1,3 +1,8 @@
+/*
+    PRINCIPIO SINGLE RESPONSIBILITY
+    La única funcionalidad de ConnectionManager es gestionar la conexión con la base de datos
+ */
+
 import {createConnection} from "typeorm";
 import {Connection} from "typeorm/connection/Connection";
 
@@ -14,10 +19,6 @@ export class ConnectionManager {
     }
 
     private static async connect() {
-        if (process.env.API_ENV === 'dev'){
-            this.connection = await createConnection('dev');
-        } else if (process.env.API_ENV === 'test') {
-            this.connection = await createConnection('test');
-        }
+        this.connection = await createConnection('dev');
     }
 }
