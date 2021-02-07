@@ -19,6 +19,11 @@ export class ConnectionManager {
     }
 
     private static async connect() {
-        this.connection = await createConnection('dev');
+        if (process.env.API_ENV === 'dev'){
+            this.connection = await createConnection('dev');
+        } else if (process.env.API_ENV === 'test') {
+            this.connection = await createConnection('test');
+        }
+
     }
 }

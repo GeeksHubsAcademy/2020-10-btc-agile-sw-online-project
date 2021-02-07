@@ -16,7 +16,7 @@
     "start": "ts-node src/run.ts",
     "start:test": "yarn start",
     "build": "tsc",
-    "test": "jest",
+    "test": "API_ENV=test jest",
     "test-watch": "jest --watchAll"
   },
   "devDependencies": {
