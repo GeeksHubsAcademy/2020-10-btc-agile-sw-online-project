@@ -13,7 +13,7 @@
     "typeorm": "^0.2.30"
   },
   "scripts": {
-    "start": "API_ENV=dev ts-node src/run.ts",
+    "start": "ts-node src/run.ts",
     "start:test": "yarn start",
     "build": "tsc",
     "test": "jest",
