@@ -1,3 +1,8 @@
+/*
+    PRINCIPIO SINGLE RESPONSIBILITY
+    Está clase solo tiene una responsabilidad, arrancar la aplicación
+ */
+
 import {App} from "./App";
 
 export class AppRunner {

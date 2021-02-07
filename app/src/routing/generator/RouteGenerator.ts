@@ -1,3 +1,8 @@
+/*
+    PRINCIPIO SINGLE RESPONSABILITY
+    Está clase solo tiene una responsabilidad, generar rutas con o sin parámetros
+ */
+
 export class RouteGenerator {
     constructor() {}
 

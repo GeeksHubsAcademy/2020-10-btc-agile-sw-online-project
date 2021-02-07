@@ -1,3 +1,8 @@
+/*
+    PRINCIPIO SINGLE RESPONSIBILITY
+    Hook encargado de realizar una petición para borrar un comentario.
+ */
+
 import {axiosRequest} from "../../../task/axios";
 import {useMutation} from "react-query";
 import {DeleteCommentRequest} from "./DeleteCommentRequest";

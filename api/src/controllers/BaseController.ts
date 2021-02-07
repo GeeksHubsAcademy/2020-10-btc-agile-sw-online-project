@@ -1,3 +1,9 @@
+/*
+    PRINCIPIO OPEN CLOSE
+    BaseController representa un controlador, está abierto a extensión ya que existen controladores con diferentes
+    funcionalidades, pero es cerrada a modificación porque afectaría a los controladores que la extienden.
+ */
+
 import * as express from 'express';
 
 export abstract class BaseController {

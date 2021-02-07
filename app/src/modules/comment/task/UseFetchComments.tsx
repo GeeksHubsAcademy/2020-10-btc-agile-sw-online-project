@@ -1,3 +1,8 @@
+/*
+    PRINCIPIO SINGLE RESPONSIBILITY
+    Hook encargado de realizar una petición para obtener los comentarios de un hilo.
+ */
+
 import {useQuery} from "react-query";
 import {axiosRequest} from "../../../task/axios";
 import {COMMENT_LIST} from "../../../task/endpoints";

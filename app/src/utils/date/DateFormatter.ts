@@ -1,3 +1,8 @@
+/*
+    PRINCIPIO SINGLE RESPONSIBILITY
+    Está clase solo tiene una responsabilidad, devolver una fecha con el formato DD/MM/YYYY
+ */
+
 export class DateFormatter {
     public static toDDMMYYYY(date: Date): string {
         let day: string | number = date.getDate();

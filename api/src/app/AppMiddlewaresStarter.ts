@@ -1,3 +1,8 @@
+/*
+    PRINCIPIO SINGLE RESPONSIBILITY
+    Está clase solo tiene una responsabilidad, inicializar los middlewares
+ */
+
 import {App} from "./App";
 import * as express from "express";
 const cors = require('cors');

@@ -1,3 +1,8 @@
+/*
+    PRINCIPIO SINGLE RESPONSIBILITY
+    Está clase solo tiene una responsabilidad, englobar todas las propiedades de la aplicación.
+ */
+
 import * as express from 'express';
 
 export class App {

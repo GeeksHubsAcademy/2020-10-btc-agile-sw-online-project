@@ -1,3 +1,8 @@
+/*
+    PRINCIPIO SINGLE RESPONSIBILITY
+    Hook encargado de realizar una petición para borrar un hilo
+ */
+
 import {useMutation} from "react-query";
 import {axiosRequest} from "../../../task/axios";
 import {DELETE_THREAD} from "../../../task/endpoints";

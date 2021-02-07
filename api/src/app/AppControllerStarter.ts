@@ -1,3 +1,12 @@
+/*
+    PRINCIPIO SINGLE RESPONSIBILITY
+    Está clase solo tiene una responsabilidad, inicializar los controladores de la aplicación.
+
+    PRINCIPIO LISKOV SUBSTITUTION
+    El método startControllers inicializa las rutas de la aplicación sin tener en cuenta ninguna implementación,
+    solo la abstracción de la clase padre BaseController.
+ */
+
 import {App} from "./App";
 import {BaseController} from "../controllers/BaseController";
 
