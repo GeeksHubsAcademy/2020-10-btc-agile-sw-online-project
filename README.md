@@ -53,6 +53,12 @@ Ejecución de test:
 **Es necesario tener el contenedor de docker corriendo para ejecutar tantos los
 test unitarios como los test de integración.**
 
+**Para ejecutar cualquier tipo de test también es necesario instalar las dependencias**
+
+Antes de ejecutar los test de frontend: ```./app yarn install```
+
+Antes de ejecutar los test de backend: ```./api yarn install```
+
 Test unitarios backend: situado en /api ejecuta:
 ``yarn test``
 
