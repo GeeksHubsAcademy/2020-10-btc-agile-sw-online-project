@@ -1,0 +1,21 @@
+dev:
+  host: "mysql"
+  port: 3306
+  username: "root"
+  password: "secret"
+  database: "forum"
+  type: "mysql"
+  entities: [
+    "src/dto/**/*.ts"
+  ]
+
+test:
+  host: "localhost"
+  port: 3306
+  username: "root"
+  password: "secret"
+  database: "forum-test"
+  type: "mysql"
+  entities: [
+      "src/dto/**/*.ts"
+  ]
