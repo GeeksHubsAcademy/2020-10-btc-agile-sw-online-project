@@ -111,9 +111,8 @@ Test integración frontend: situado en /app ejecuta:
 | Docker compose | 
 
 ## Notas
-```
-Url del Video
-```
+Presentación del proyecto
+https://drive.google.com/file/d/1N6j02Ta8HgyCk1p0zm9Z7FVij9U0fPuG/view?usp=sharing
 
 ### Arquitectura backend
 ![](backend-architecture.png)
