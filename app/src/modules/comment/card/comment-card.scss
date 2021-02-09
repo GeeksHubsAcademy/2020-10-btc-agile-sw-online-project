@@ -1,0 +1,38 @@
+.comment-card-container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #786D88;
+
+  img {
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+  }
+
+  .comment__content {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+
+    .comment__header {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: baseline;
+      justify-content: space-between;
+
+      span {
+        margin-left: 15px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .comment__body {
+      margin-top: 15px;
+
+      p {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}

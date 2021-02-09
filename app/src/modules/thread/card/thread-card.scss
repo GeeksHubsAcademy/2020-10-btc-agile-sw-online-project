@@ -1,0 +1,42 @@
+.thread-card-container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #786D88;
+
+  img {
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+  }
+
+  .thread__info {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+
+    .thread-info__title {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      .thread-info-title__actions {
+        display: flex;
+
+        button {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    span {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.list-view-container {
+  padding: 10px;
+
+  .list-view__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #786D88;
+
+    h3 {
+      letter-spacing: 1px;
+      margin-left: 30px;
+    }
+  }
+}

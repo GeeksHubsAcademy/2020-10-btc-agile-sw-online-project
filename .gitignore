@@ -1,0 +1,21 @@
+# modules
+app/node_modules
+api/node_modules
+
+# frontend
+app/.pnp
+app/.pnp.js
+app/coverage
+app/build
+app/.DS_Store
+app/.env.local
+app/.env.development.local
+app/.env.test.local
+app/.env.production.local
+app/npm-debug.log*
+app/yarn-debug.log*
+app/yarn-error.log*
+app/.eslintcache
+
+# backend
+api/build
